@@ -130,4 +130,26 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(el);
         });
     });
+
+    // --- Hero Image Slider ---
+    const slides = document.querySelectorAll('#hero-slider .slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 3000); // Change image every 3 seconds
+    }
+
+    // --- Services Image Slider ---
+    const servicesSlides = document.querySelectorAll('#services-slider .slide');
+    if (servicesSlides.length > 0) {
+        let currentServicesSlide = 0;
+        setInterval(() => {
+            servicesSlides[currentServicesSlide].classList.remove('active');
+            currentServicesSlide = (currentServicesSlide + 1) % servicesSlides.length;
+            servicesSlides[currentServicesSlide].classList.add('active');
+        }, 3000); // Change image every 3 seconds
+    }
 });
